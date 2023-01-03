@@ -22,12 +22,7 @@ export default function ScreenOne() {
         We provide you with an avenue to record your daily spending, and
         earning. A way to track how much money you’re using and how much is
         coming in.{" "}
-      </Text>
-      <View style={styles.row}>
-        <TouchableOpacity style={styles.button}>
-          <LongButton text="Getting Started" />
-        </TouchableOpacity>
-      </View>
+      </Text>      
     </View>
   );
 }

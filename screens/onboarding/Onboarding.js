@@ -4,14 +4,20 @@ import ScreenFour from "./ScreenFour";
 import ScreenOne from "./ScreenOne";
 import ScreenTwo from "./ScreenTwo";
 import ScreenThree from "./ScreenThree";
+import React from "react";
 
-export default function Onboarding(){
-    return(
-        <Swiper showsButtons={false} activeDotColor="#12B886" loop={false} paginationStyle={{ bottom: "13%" }} >
-            <ScreenOne/>
-            <ScreenTwo/>
-            <ScreenThree/>
-            <ScreenFour/>
-        </Swiper>
-    )
+export default function Onboarding({ navigation }) {
+  return (
+    <Swiper
+      showsButtons={false}
+      activeDotColor="#12B886"
+      loop={false}
+      paginationStyle={{ bottom: "13%" }}
+    >
+      <ScreenOne />
+      <ScreenTwo />
+      <ScreenThree />
+      <ScreenFour navigation={navigation} />
+    </Swiper>
+  );
 }

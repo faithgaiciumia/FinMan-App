@@ -1,4 +1,3 @@
-import { TextInput } from "@react-native-material/core";
 import {
   Dimensions,
   Image,
@@ -16,16 +15,13 @@ export default function ScreenThree() {
         source={require("../../assets/img/onb.png")}
         style={styles.onbImg}
       />
-      <Text style={[styles.heading]}>Tell us your email</Text>
-      <TextInput label="Email" variant="outlined" style={styles.textInput} />
-      <View style={styles.row}>
-        <TouchableOpacity>
-          <Text style={styles.btnTxt}>Back</Text>
-        </TouchableOpacity>
-        <TouchableOpacity>
-          <Text style={styles.btnTxt}>Next</Text>
-        </TouchableOpacity>
-      </View>
+      <Text style={[styles.heading]}>
+        Be in Control of your finances, save and invest in your future
+      </Text>
+      <Text style={styles.text}>
+        Record all your daily earnings using the new earning feature. View a
+        list of your earnings on the my income tab.
+      </Text>      
     </View>
   );
 }
@@ -46,7 +42,7 @@ const styles = StyleSheet.create({
     marginTop: -30,
     fontFamily: "PoppinsBold",
     fontSize: 24,
-    width: "30%",
+    width: "80%",
     marginHorizontal: 20,
   },
   text: {
@@ -55,21 +51,12 @@ const styles = StyleSheet.create({
     fontSize: 12,
   },
   button: {
-    margin: 20,
+    marginHorizontal: 20,
+    marginTop: 50,
   },
   row: {
     flexDirection: "row",
-    justifyContent: "space-between",
-    width: Dimensions.get("screen").width - 40,
-    marginHorizontal:20,
-    marginTop:100
+    justifyContent: "center",
+    width: Dimensions.get("screen").width,
   },
-  textInput: {
-    width: Dimensions.get("screen").width - 40,
-    margin: 20,
-  },
-  btnTxt:{
-    color:"#12B886",
-    fontFamily:"PoppinsMedium"
-  }
 });
