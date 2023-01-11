@@ -1,4 +1,8 @@
-import { createDrawerNavigator, DrawerContentScrollView, DrawerItemList } from "@react-navigation/drawer";
+import {
+  createDrawerNavigator,
+  DrawerContentScrollView,
+  DrawerItemList,
+} from "@react-navigation/drawer";
 import {
   FontAwesome,
   Entypo,
@@ -20,10 +24,11 @@ export default function Home() {
   return (
     <Drawer.Navigator
       initialRouteName="HomePage"
-      drawerContent={(props) => (
-        <CustomDrawer {...props}/>
-      )}
-      screenOptions={{drawerActiveBackgroundColor:"#C6F3CA", drawerActiveTintColor:"#12B886"}}
+      drawerContent={(props) => <CustomDrawer {...props} />}
+      screenOptions={{
+        drawerActiveBackgroundColor: "#C6F3CA",
+        drawerActiveTintColor: "#12B886",
+      }}
     >
       <Drawer.Screen
         name="HomePage"
@@ -32,6 +37,8 @@ export default function Home() {
           drawerIcon: ({ color }) => (
             <FontAwesome name="home" size={20} color={color} />
           ),
+          headerTitle: (props) => <CustomHeader {...props} name="home" />,
+          headerTitleAlign:"center"
         }}
       />
       <Drawer.Screen
@@ -40,7 +47,8 @@ export default function Home() {
         options={{
           drawerIcon: ({ color }) => (
             <Entypo name="user" size={20} color={color} />
-          ),
+          ),          
+          headerTitleAlign:"center"
         }}
       />
       <Drawer.Screen
@@ -49,7 +57,8 @@ export default function Home() {
         options={{
           drawerIcon: ({ color }) => (
             <MaterialCommunityIcons name="cash-minus" size={20} color={color} />
-          ),
+          ),          
+          headerTitleAlign:"center"
         }}
       />
       <Drawer.Screen
@@ -58,7 +67,8 @@ export default function Home() {
         options={{
           drawerIcon: ({ color }) => (
             <MaterialCommunityIcons name="cash-plus" size={20} color={color} />
-          ),
+          ),          
+          headerTitleAlign:"center"
         }}
       />
       <Drawer.Screen
@@ -67,7 +77,8 @@ export default function Home() {
         options={{
           drawerIcon: ({ color }) => (
             <AntDesign name="areachart" size={20} color={color} />
-          ),
+          ),          
+          headerTitleAlign:"center"
         }}
       />
       <Drawer.Screen
@@ -76,14 +87,23 @@ export default function Home() {
         options={{
           drawerIcon: ({ color }) => (
             <Ionicons name="settings" size={20} color={color} />
-          ),
+          ),          
+          headerTitleAlign:"center"
         }}
       />
     </Drawer.Navigator>
   );
 }
 
-function CustomDrawer(props) {  
+function CustomHeader({name}) {
+  return (
+    <View>      
+        <AntDesign name={name} size={24} color="black" />      
+    </View>
+  );
+}
+
+function CustomDrawer(props) {
   return (
     <DrawerContentScrollView {...props}>
       {/* header */}
@@ -100,30 +120,32 @@ function CustomDrawer(props) {
 }
 
 const styles = StyleSheet.create({
-  header:{    
-    height:180,
-    justifyContent:"center",
-    alignItems:"center",
-    alignContent:"center"
+  header: {
+    height: 180,
+    justifyContent: "center",
+    alignItems: "center",
+    alignContent: "center",
   },
-  profileCircle:{
-    width:100,
-    height:100,
-    backgroundColor:"#12B886",
-    borderRadius:100,
-    justifyContent:"center",
-    alignContent:"center",
-    alignItems:"center"
+  profileCircle: {
+    width: 100,
+    height: 100,
+    backgroundColor: "#12B886",
+    borderRadius: 100,
+    justifyContent: "center",
+    alignContent: "center",
+    alignItems: "center",
   },
-  profileText:{
-    color:"#fff",
-    fontFamily:"PoppinsBold",
-    fontSize:42
+  profileText: {
+    color: "#fff",
+    fontFamily: "PoppinsBold",
+    fontSize: 42,
   },
-  text:{
-    fontFamily:"PoppinsBold",
-    marginTop:15,
-    fontSize:18,
-
-  }
-})
+  text: {
+    fontFamily: "PoppinsBold",
+    marginTop: 15,
+    fontSize: 18,
+  },
+  right: {
+    textAlign: "right",
+  },
+});
