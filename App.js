@@ -6,6 +6,8 @@ import Home from "./screens/Home/Home";
 import Onboarding from "./screens/onboarding/Onboarding";
 import SignUp from "./screens/SignUp/SignUp";
 import SignUpOne from "./screens/SignUp/SignUpOne";
+import AddEarning from './screens/Create/AddEarning';
+import AddSpending from './screens/Create/AddSpending';
 
 export default function App() {
   const Stack = createNativeStackNavigator();
@@ -38,6 +40,16 @@ export default function App() {
           name="Home"
           component={Home}
           options={{ headerShown: false }}
+        />
+        <Stack.Screen
+          name="AddEarning"
+          component={AddEarning}
+          options={{ headerShown: true }}
+        />
+        <Stack.Screen
+          name="AddSpending"
+          component={AddSpending}
+          options={{ headerShown: true }}
         />
       </Stack.Navigator>
     </NavigationContainer>

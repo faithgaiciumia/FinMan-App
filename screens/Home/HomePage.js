@@ -1,10 +1,19 @@
-import { Text, View, StyleSheet, Dimensions, ScrollView } from "react-native";
-import { TouchableOpacity } from "react-native-gesture-handler";
+import {
+  Text,
+  View,
+  StyleSheet,
+  Dimensions,
+  ScrollView,
+  Modal,
+  TouchableOpacity,
+  TouchableWithoutFeedback,
+} from "react-native";
 import DisplayRow from "../../components/DisplayRow";
-import { AntDesign } from "@expo/vector-icons";
+import { AntDesign, MaterialCommunityIcons } from "@expo/vector-icons";
 import { BarChart } from "react-native-chart-kit";
-export default function HomePage() {
-  const data = [{ value: 50 }, { value: 80 }, { value: 90 }, { value: 70 }];
+import React from "react";
+export default function HomePage({ navigation }) {
+  const [modalVisible, setModalVisible] = React.useState(false);
   return (
     <View style={styles.container}>
       <ScrollView>
@@ -82,9 +91,63 @@ export default function HomePage() {
       </ScrollView>
       {/* floating button */}
       <View style={[styles.footer]}>
-        <TouchableOpacity style={styles.floatingBtn}>
-          <AntDesign name="plus" size={24} color="white" />
-        </TouchableOpacity>
+        <View style={styles.bottomView}>
+          <Modal
+            animationType="slide"
+            transparent={true}
+            visible={modalVisible}
+            onRequestClose={() => {
+              setModalVisible(!modalVisible);
+            }}
+          >
+            <TouchableWithoutFeedback onPress={() => setModalVisible(false)}>
+              <View style={styles.bottomView}>
+                <View style={{ marginVertical: 20 }}>
+                  <View style={styles.modalRow}>
+                    <Text style={styles.modalText}>Spending</Text>
+                    <TouchableOpacity
+                      style={[styles.floatingBtn, styles.spendingBtn]}
+                      onPress={() => {
+                        setModalVisible(false);
+                        navigation.navigate("AddSpending");
+                      }}
+                    >
+                      <MaterialCommunityIcons
+                        name="cash-minus"
+                        size={20}
+                        color="white"
+                      />
+                    </TouchableOpacity>
+                  </View>
+                  <View style={styles.modalRow}>
+                    <Text style={styles.modalText}>Earning</Text>
+                    <TouchableOpacity
+                      style={[styles.floatingBtn, styles.earningBtn]}
+                      onPress={() => {
+                        setModalVisible(false);
+                        navigation.navigate("AddEarning");
+                      }}
+                    >
+                      <MaterialCommunityIcons
+                        name="cash-plus"
+                        size={20}
+                        color="white"
+                      />
+                    </TouchableOpacity>
+                  </View>
+                </View>
+              </View>
+            </TouchableWithoutFeedback>
+          </Modal>
+        </View>
+        {!modalVisible && (
+          <TouchableOpacity
+            style={styles.floatingBtn}
+            onPress={() => setModalVisible(!modalVisible)}
+          >
+            <AntDesign name="plus" size={24} color="white" />
+          </TouchableOpacity>
+        )}
       </View>
       {/* end of floating button */}
     </View>
@@ -178,5 +241,33 @@ const styles = StyleSheet.create({
     justifyContent: "center",
     alignContent: "center",
     alignItems: "center",
+  },
+  bottomView: {
+    flex: 1,
+    justifyContent: "flex-end",
+    alignItems: "flex-end",
+    marginVertical: 0,
+    backgroundColor: "rgba(0, 0, 0, 0.5)",
+  },
+  modalRow: {
+    flexDirection: "row",
+    alignContent: "center",
+    alignItems: "center",
+    marginHorizontal: 10,
+    marginVertical: 5,
+  },
+  modalText: {
+    color: "#fff",
+    fontSize: 14,
+    fontFamily: "PoppinsBold",
+    marginHorizontal: 10,
+  },
+  spendingBtn: {
+    width: 40,
+    height: 40,
+  },
+  earningBtn: {
+    width: 60,
+    height: 60,
   },
 });
