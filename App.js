@@ -25,7 +25,7 @@ export default function App() {
   }
   return (
     <NavigationContainer>
-      <Stack.Navigator initialRouteName="Home">
+      <Stack.Navigator initialRouteName="AddEarning">
         <Stack.Screen
           name="onboarding"
           component={Onboarding}
@@ -44,12 +44,12 @@ export default function App() {
         <Stack.Screen
           name="AddEarning"
           component={AddEarning}
-          options={{ headerShown: true }}
+          options={{ headerShown: true, title:"Add Earning" }}
         />
         <Stack.Screen
           name="AddSpending"
           component={AddSpending}
-          options={{ headerShown: true }}
+          options={{ headerShown: true, title:"Add Spending" }}
         />
       </Stack.Navigator>
     </NavigationContainer>
