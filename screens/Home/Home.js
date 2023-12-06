@@ -38,7 +38,7 @@ export default function Home() {
             <FontAwesome name="home" size={20} color={color} />
           ),
           headerTitle: (props) => <CustomHeader {...props} name="home" />,
-          headerTitleAlign:"center"
+          headerTitleAlign: "center",
         }}
       />
       <Drawer.Screen
@@ -47,8 +47,8 @@ export default function Home() {
         options={{
           drawerIcon: ({ color }) => (
             <Entypo name="user" size={20} color={color} />
-          ),          
-          headerTitleAlign:"center"
+          ),
+          headerTitleAlign: "center",
         }}
       />
       <Drawer.Screen
@@ -57,8 +57,8 @@ export default function Home() {
         options={{
           drawerIcon: ({ color }) => (
             <MaterialCommunityIcons name="cash-minus" size={20} color={color} />
-          ),          
-          headerTitleAlign:"center"
+          ),
+          headerTitleAlign: "center",
         }}
       />
       <Drawer.Screen
@@ -67,21 +67,21 @@ export default function Home() {
         options={{
           drawerIcon: ({ color }) => (
             <MaterialCommunityIcons name="cash-plus" size={20} color={color} />
-          ),          
-          headerTitleAlign:"center"
+          ),
+          headerTitleAlign: "center",
         }}
       />
       <Drawer.Screen
-        name="Predictions"
+        name="Insights"
         component={Predictions}
         options={{
           drawerIcon: ({ color }) => (
             <AntDesign name="areachart" size={20} color={color} />
-          ),          
-          headerTitleAlign:"center"
+          ),
+          headerTitleAlign: "center",
         }}
       />
-      <Drawer.Screen
+      {/* <Drawer.Screen
         name="Settings"
         component={Settings}
         options={{
@@ -90,15 +90,15 @@ export default function Home() {
           ),          
           headerTitleAlign:"center"
         }}
-      />
+      /> */}
     </Drawer.Navigator>
   );
 }
 
-function CustomHeader({name}) {
+function CustomHeader({ name }) {
   return (
-    <View>      
-        <AntDesign name={name} size={24} color="black" />      
+    <View>
+      <AntDesign name={name} size={24} color="black" />
     </View>
   );
 }

@@ -65,9 +65,24 @@ export default function HomePage({ navigation }) {
           </View>
           {/* contents row */}
           <View>
-            <DisplayRow />
-            <DisplayRow />
-            <DisplayRow />
+            <DisplayRow
+              uri="https://img.icons8.com/fluency/512/home-page.png"
+              commodity="Rent"
+              time="yesterday"
+              amount="KES10,000"
+            />
+            <DisplayRow
+              uri="https://img.icons8.com/fluency/512/ingredients.png"
+              commodity="Groceries"
+              time="yesterday"
+              amount="KES2,000"
+            />
+            <DisplayRow
+              uri="https://img.icons8.com/plasticine/512/clothes.png"
+              commodity="Clothes"
+              time="yesterday"
+              amount="KES5,000"
+            />
           </View>
         </View>
         {/* end of spending container */}
@@ -82,8 +97,18 @@ export default function HomePage({ navigation }) {
           </View>
           {/* contents row */}
           <View>
-            <DisplayRow />
-            <DisplayRow />
+            <DisplayRow
+              uri="https://img.icons8.com/fluency/512/paid-bill.png"
+              commodity="Shumia Investments"
+              time="yesterday"
+              amount="KES55,000"
+            />
+            <DisplayRow
+              uri="https://img.icons8.com/fluency/512/paid-bill.png"
+              commodity="Ianto Investments"
+              time="yesterday"
+              amount="KES105,000"
+            />
             <DisplayRow />
           </View>
         </View>

@@ -8,6 +8,10 @@ import SignUp from "./screens/SignUp/SignUp";
 import SignUpOne from "./screens/SignUp/SignUpOne";
 import AddEarning from './screens/Create/AddEarning';
 import AddSpending from './screens/Create/AddSpending';
+import Profile from './screens/Home/Profile';
+import Spendings from './screens/Home/Spendings';
+import Earnings from './screens/Home/Earnings';
+import Predictions from './screens/Home/Predictions';
 
 export default function App() {
   const Stack = createNativeStackNavigator();
@@ -25,9 +29,9 @@ export default function App() {
   }
   return (
     <NavigationContainer>
-      <Stack.Navigator initialRouteName="AddEarning">
+      <Stack.Navigator initialRouteName="Onboarding">
         <Stack.Screen
-          name="onboarding"
+          name="Onboarding"
           component={Onboarding}
           options={{ headerShown: false }}
         />
@@ -50,6 +54,26 @@ export default function App() {
           name="AddSpending"
           component={AddSpending}
           options={{ headerShown: true, title:"Add Spending" }}
+        />
+        <Stack.Screen
+          name="Profile"
+          component={Profile}
+          options={{ headerShown: true, title:"Profile" }}
+        />
+        <Stack.Screen
+          name="Spendings"
+          component={Spendings}
+          options={{ headerShown: true, title:"Spendings" }}
+        />
+        <Stack.Screen
+          name="Earnings"
+          component={Earnings}
+          options={{ headerShown: true, title:"Earnings" }}
+        />
+        <Stack.Screen
+          name="Predictions"
+          component={Predictions}
+          options={{ headerShown: true, title:"Insights" }}
         />
       </Stack.Navigator>
     </NavigationContainer>
