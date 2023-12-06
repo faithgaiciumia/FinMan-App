@@ -46,6 +46,8 @@ The FinMan App project demonstrates the following skills:
 Contributions are welcome! If you find any issues or have suggestions for - - improvements, feel free to open an issue or submit a pull request.
 
 ## APK
-The APK file can be dowloaded from: 
+The APK file can be dowloaded from: https://drive.google.com/file/d/1M8jB4XmgVbE4tZPkVL7lECd-FMiINBQ-/view?usp=sharing
+
+
 I have also documented the development process in my hashnode blog: https://faithgaiciumia.hashnode.dev/
 
